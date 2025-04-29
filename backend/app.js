@@ -17,7 +17,9 @@ app.use((req, res, next) => {
 
   next();
 });
-
+app.get("/", (req, res) => {
+  res.send("Hello from Vercel backend!");
+});
 app.get('/places', async (req, res) => {
   const fileContent = await fs.readFile('./data/places.json');
 
